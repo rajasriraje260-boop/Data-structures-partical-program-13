@@ -1,1 +1,23 @@
 # Data-structures-partical-program-13
+# DFS using recursion
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+visited = set()
+
+def dfs(node):
+    if node not in visited:
+        print(node, end=" ")
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(neighbour)
+
+# Start DFS from node A
+dfs('A')
